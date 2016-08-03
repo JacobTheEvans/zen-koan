@@ -4,9 +4,8 @@
   "description": "A website dedicated to zen koan (story, dialogue, question, or statement)",
   "main": "main.jsx",
   "scripts": {
-    "build-front": "watchify src/public/main.jsx -v -t [ babelify  --presets [es2015 react] ] -o public/js/main.js",
-    "build-back": "watchify src/server/app.js -v -t [ babelify  --presets [es2015] -o server/app.js",
-    "run": "node server/app.js"
+    "build": "./node_modules/.bin/browserify -v -t [ babelify  --presets [es2015 react] ] src/public/main.jsx > public/js/main.js;    ./node_modules/.bin/browserify -v -t [ babelify  --presets [es2015]] src/server/app.js > server/app.js ;",
+    "start": "node server/app.js"
   },
   "repository": {
     "type": "git",
@@ -34,7 +33,6 @@
     "mongoose": "^4.5.8",
     "path": "^0.12.7",
     "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "watchify": "^3.7.0"
+    "react-dom": "^15.2.1"
   }
 }
