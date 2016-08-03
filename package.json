@@ -4,7 +4,7 @@
   "description": "A website dedicated to zen koan (story, dialogue, question, or statement)",
   "main": "main.jsx",
   "scripts": {
-    "build": "./node_modules/.bin/browserify -v -t [ babelify  --presets [es2015 react] ] src/public/main.jsx > public/js/main.js;    ./node_modules/.bin/browserify -v -t [ babelify  --presets [es2015]] src/server/app.js > server/app.js ;",
+    "build": "./node_modules/.bin/browserify -v -t [ babelify  --presets [es2015 react] ] src/public/main.jsx > public/js/main.js; ./node_modules/.bin/browserify -v -t [ babelify  --presets [es2015]] src/server/app.js > server/app.js ;",
     "start": "node server/app.js"
   },
   "repository": {
@@ -30,7 +30,8 @@
     "body-parser": "^1.15.2",
     "browserify": "^13.1.0",
     "express": "^4.14.0",
-    "mongoose": "^4.5.8",
+    "jugglingdb": "^2.0.0-rc8",
+    "jugglingdb-postgres": "^0.1.0",
     "path": "^0.12.7",
     "react": "^15.2.1",
     "react-dom": "^15.2.1"
