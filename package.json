@@ -5,7 +5,8 @@
   "main": "main.jsx",
   "scripts": {
     "build-front": "watchify src/public/main.jsx -v -t [ babelify  --presets [es2015 react] ] -o public/js/main.js",
-    "build-back": "watchify src/server/app.jsx -v -t [ babelify  --presets [es2015] -o server/app.js"
+    "build-back": "watchify src/server/app.js -v -t [ babelify  --presets [es2015] -o server/app.js",
+    "run": "node server/app.js"
   },
   "repository": {
     "type": "git",
