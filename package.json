@@ -5,7 +5,7 @@
   "main": "main.jsx",
   "scripts": {
     "build-back": "./node_modules/.bin/browserify src/server/app.js -o server/app.js -t [ babelify --presets [ es2015 ] ] --node",
-    "build-front": "./node_modules/.bin/browserify src/public/main.jsx -o public/main.js -t [ babelify --presets [ es2015 react] ]",
+    "build-front": "./node_modules/.bin/browserify src/public/main.jsx -o public/js/main.js -t [ babelify --presets [ es2015 react] ]",
     "start": "node server/app.js"
   },
   "repository": {
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/JacobTheEvans/zen-koan#readme",
   "dependencies": {
+    "babel-core": "^6.11.4",
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.11.1",
     "babelify": "^7.3.0",
@@ -37,7 +38,7 @@
     "path": "^0.12.7",
     "pg": "^6.0.3",
     "pg-native": "^1.10.0",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0"
   }
 }

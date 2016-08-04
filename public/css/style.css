@@ -1,0 +1,17 @@
+body {
+  margin: 0px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.wrapper {
+  background-color: #97aba9;
+  width: %100;
+  height: 200vh;
+}
+
+.navbar {
+  background-color: purple;
+  height: 70px;
+  position: fixed;
+  width: 100%;
+}

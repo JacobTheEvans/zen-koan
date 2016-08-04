@@ -13,7 +13,7 @@ Base = declarative_base()
 
 #Base Story Class
 class Story(Base):
-    __tablename__  = "Stories"
+    __tablename__  = "koan"
     title = Column(String(1000), nullable=False, primary_key=True)
     text = Column(String(10500), nullable=False)
 
