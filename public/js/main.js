@@ -21011,7 +21011,7 @@ var Footer = function (_React$Component) {
           "div",
           { className: "footer-text" },
           _react2.default.createElement(_reactFontawesome2.default, { name: "copyright" }),
-          "2016, Apache 2.0"
+          " 2016, Apache 2.0"
         ),
         _react2.default.createElement(
           "div",
