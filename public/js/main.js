@@ -20992,6 +20992,56 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+var BackButton = function (_React$Component) {
+  _inherits(BackButton, _React$Component);
+
+  function BackButton() {
+    _classCallCheck(this, BackButton);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(BackButton).apply(this, arguments));
+  }
+
+  _createClass(BackButton, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "a",
+        { className: "button back-button" },
+        _react2.default.createElement(_reactFontawesome2.default, { name: "reply" })
+      );
+    }
+  }]);
+
+  return BackButton;
+}(_react2.default.Component);
+
+exports.default = BackButton;
+
+},{"react":175,"react-fontawesome":3}],178:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactFontawesome = require("react-fontawesome");
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Footer = function (_React$Component) {
   _inherits(Footer, _React$Component);
 
@@ -21031,7 +21081,7 @@ var Footer = function (_React$Component) {
 
 exports.default = Footer;
 
-},{"react":175,"react-fontawesome":3}],178:[function(require,module,exports){
+},{"react":175,"react-fontawesome":3}],179:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21110,7 +21160,86 @@ var Navbar = function (_React$Component) {
 
 exports.default = Navbar;
 
-},{"react":175}],179:[function(require,module,exports){
+},{"react":175}],180:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require("react");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _backButton = require("./back-button.jsx");
+
+var _backButton2 = _interopRequireDefault(_backButton);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Story = function (_React$Component) {
+  _inherits(Story, _React$Component);
+
+  function Story() {
+    _classCallCheck(this, Story);
+
+    return _possibleConstructorReturn(this, Object.getPrototypeOf(Story).apply(this, arguments));
+  }
+
+  _createClass(Story, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "div",
+        { className: "story-section" },
+        _react2.default.createElement(
+          "div",
+          { className: "story-title" },
+          "Sleeping in the Daytime"
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "The master Soyen Shaku passed from this world when he was sixty-one years of age. Fulfilling his life's work, he left a great teaching, far richer than that of most Zen masters. His pupils used to sleep in the daytime during midsummer, and while he overlooked this he himself never wasted a minute."
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "When he was but twelve years old he was already studying Tendai philosophical speculation. One summer day the air had been so sultry that little Soyen stretched his legs and went to sleep while his teacher was away."
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "Three hours passed when, suddenly waking, he heard his master enter, but it was too late. There he lay, sprawled across the doorway."
+        ),
+        _react2.default.createElement(
+          "p",
+          null,
+          "\"I beg your pardon, I beg your pardon,\" his teacher whispered, stepping carefully over Soyen's body as if it were that of some distinguished guest. After this, Soyen never slept again in the afternoon."
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "button-section" },
+          _react2.default.createElement(_backButton2.default, null)
+        )
+      );
+    }
+  }]);
+
+  return Story;
+}(_react2.default.Component);
+
+exports.default = Story;
+
+},{"./back-button.jsx":177,"react":175}],181:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -21134,6 +21263,10 @@ var _about2 = _interopRequireDefault(_about);
 var _footer = require("./footer.jsx");
 
 var _footer2 = _interopRequireDefault(_footer);
+
+var _story = require("./story.jsx");
+
+var _story2 = _interopRequireDefault(_story);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21161,7 +21294,7 @@ var Wrapper = function (_React$Component) {
         "div",
         { className: "wrapper" },
         _react2.default.createElement(_navbar2.default, { logoText: "Zen Koan", navItems: navItems }),
-        _react2.default.createElement(_about2.default, null),
+        _react2.default.createElement(_story2.default, null),
         _react2.default.createElement(_footer2.default, null)
       );
     }
@@ -21172,7 +21305,7 @@ var Wrapper = function (_React$Component) {
 
 exports.default = Wrapper;
 
-},{"./about.jsx":176,"./footer.jsx":177,"./navbar.jsx":178,"react":175}],180:[function(require,module,exports){
+},{"./about.jsx":176,"./footer.jsx":178,"./navbar.jsx":179,"./story.jsx":180,"react":175}],182:[function(require,module,exports){
 "use strict";
 
 var _react = require("react");
@@ -21191,4 +21324,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(_wrapper2.default, null), document.getElementById("app"));
 
-},{"./components/wrapper.jsx":179,"react":175,"react-dom":2}]},{},[180]);
+},{"./components/wrapper.jsx":181,"react":175,"react-dom":2}]},{},[182]);
