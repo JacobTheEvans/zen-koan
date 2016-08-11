@@ -2,6 +2,10 @@ import React from "react";
 import BackButton from "./back-button.jsx";
 
 class Story extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   render() {
     return (
       <div className="story-section">
