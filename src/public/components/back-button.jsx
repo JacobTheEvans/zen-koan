@@ -4,7 +4,7 @@ import FontAwesome from "react-fontawesome";
 class BackButton extends React.Component {
   render() {
     return (
-      <a className="button back-button"><FontAwesome name="reply" /></a>
+      <a href="/#/" className="button back-button"><FontAwesome name="reply" /></a>
     )
   }
 }

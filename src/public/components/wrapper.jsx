@@ -5,8 +5,8 @@ import Footer from "./footer.jsx";
 import Story from "./story.jsx";
 
 var navItems = [
-  {"name": "About", "link": "/about"},
-  {"name": "Stories", "link": "/stories"}
+  {"name": "About", "link": "/#/"},
+  {"name": "Stories", "link": "/#/story"}
 ]
 
 class Wrapper extends React.Component {
@@ -14,7 +14,7 @@ class Wrapper extends React.Component {
     return (
       <div className="wrapper">
         <Navbar logoText="Zen Koan" navItems={navItems}/>
-        <Story />
+          {this.props.children}
         <Footer />
       </div>
     )

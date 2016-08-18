@@ -90,6 +90,14 @@ body {
   margin-bottom: 80px;
 }
 
+.not-found-section {
+  margin-top: 110px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 .section-header {
   font-family: 'Sintony', sans-serif;
   font-size: 1.8em;
