@@ -26534,6 +26534,10 @@ var _react = require("react");
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactFontawesome = require("react-fontawesome");
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -26552,6 +26556,23 @@ var Navbar = function (_React$Component) {
   }
 
   _createClass(Navbar, [{
+    key: "toggle",
+    value: function toggle() {
+      console.log("Show");
+      document.getElementById("dropDown").classList.toggle("show");
+      window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains("show")) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      };
+    }
+  }, {
     key: "render",
     value: function render() {
       var navLinks = this.props.navItems.map(function (item) {
@@ -26563,6 +26584,13 @@ var Navbar = function (_React$Component) {
             { className: "nav-link", href: item.link },
             item.name
           )
+        );
+      });
+      var navMLinks = this.props.navItems.map(function (item) {
+        return _react2.default.createElement(
+          "a",
+          { key: item.name + "m", href: item.link },
+          item.name
         );
       });
       return _react2.default.createElement(
@@ -26587,8 +26615,22 @@ var Navbar = function (_React$Component) {
           { className: "nav-link-bar" },
           _react2.default.createElement(
             "ul",
-            { className: "nav-links" },
+            { className: "nav-links l-only" },
             navLinks
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "dropdown m-only" },
+            _react2.default.createElement(
+              "button",
+              { onClick: this.toggle, className: "dropbtn" },
+              _react2.default.createElement(_reactFontawesome2.default, { name: "bars" })
+            ),
+            _react2.default.createElement(
+              "div",
+              { id: "dropDown", className: "dropdown-content" },
+              navMLinks
+            )
           )
         )
       );
@@ -26600,7 +26642,7 @@ var Navbar = function (_React$Component) {
 
 exports.default = Navbar;
 
-},{"react":238}],244:[function(require,module,exports){
+},{"react":238,"react-fontawesome":3}],244:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
