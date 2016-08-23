@@ -1,5 +1,5 @@
 import React from "react";
-import StoriesButton from "./stories-button.jsx";
+import KoanButton from "./koan-button.jsx";
 
 class About extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class About extends React.Component {
           <div className="section-header">Website</div>
           <p>This website was made by <a href="https://jacobtheevans.com">Jacob Evans</a> with the data taken from <a href="http://deoxy.org/koans">deoxy</a>. The code for this website and scraper used to gather data are available here <a href="https://github.com/JacobTheEvans/zen-koan">github.com/JacobTheEvans/zen-koan</a></p>
           <div className="button-section">
-            <StoriesButton />
+            <KoanButton />
           </div>
         </div>
       </div>

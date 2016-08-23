@@ -28051,8 +28051,11 @@ Client.prototype.query = function(config, values, callback) {
   return query;
 };
 
-Client.prototype.end = function() {
+Client.prototype.end = function(cb) {
   this.connection.end();
+  if (cb) {
+    this.connection.once('end', cb);
+  }
 };
 
 Client.md5 = function(string) {
@@ -28291,6 +28294,9 @@ Connection.prototype.attachListeners = function(stream) {
       self.emit(msg.name, msg);
       packet = self._reader.read();
     }
+  });
+  stream.on('end', function() {
+    self.emit('end');
   });
 };
 
@@ -30179,6 +30185,9 @@ var EventEmitter = require('events').EventEmitter
 var objectAssign = require('object-assign')
 
 var Pool = module.exports = function (options, Client) {
+  if (!(this instanceof Pool)) {
+    return new Pool(options, Client)
+  }
   EventEmitter.call(this)
   this.options = objectAssign({}, options)
   this.log = this.options.log || function () { }
@@ -30212,13 +30221,14 @@ Pool.prototype._create = function (cb) {
   }.bind(this))
 
   client.connect(function (err) {
-    this.log('client connected')
-    this.emit('connect', client)
     if (err) {
       this.log('client connection error:', err)
       cb(err)
+    } else {
+      this.log('client connected')
+      this.emit('connect', client)
+      cb(null, client)
     }
-    cb(err, err ? null : client)
   }.bind(this))
 }
 
@@ -31653,10 +31663,12 @@ module.exports.getPassword = function(connInfo, stream, cb) {
     }
 
     var onEnd = function() {
+        stream.destroy();
         cb(pass);
     };
 
     var onErr = function(err) {
+        stream.destroy();
         warn('WARNING: error on reading file: %s', err);
         cb(undefined);
     };
@@ -31774,8 +31786,6 @@ var path = require('path')
 ;
 
 
-module.exports.warnTo = helper.warnTo;
-
 module.exports = function(connInfo, cb) {
     var file = helper.getFileName();
     
@@ -31789,6 +31799,8 @@ module.exports = function(connInfo, cb) {
         helper.getPassword(connInfo, st, cb);
     });
 };
+
+module.exports.warnTo = helper.warnTo;
 
 },{"./helper.js":171,"fs":undefined,"path":undefined}],173:[function(require,module,exports){
 //filter will reemit the data if cb(err,pass) pass is truthy
@@ -33161,7 +33173,7 @@ if (typeof define === 'function' && define.amd)
 },{}],176:[function(require,module,exports){
 module.exports={
   "name": "pg",
-  "version": "6.0.3",
+  "version": "6.1.0",
   "description": "PostgreSQL client - pure javascript & libpq with the same API",
   "keywords": [
     "postgres",
@@ -33187,7 +33199,7 @@ module.exports={
     "pg-connection-string": "0.1.3",
     "pg-pool": "1.*",
     "pg-types": "1.*",
-    "pgpass": "0.0.6",
+    "pgpass": "1.x",
     "semver": "4.3.2"
   },
   "devDependencies": {
@@ -33207,12 +33219,12 @@ module.exports={
   "engines": {
     "node": ">= 0.8.0"
   },
-  "gitHead": "9274f08fa2d8ae55a218255bf7880d26b6abc935",
+  "gitHead": "42689dac11a199d4c93dda7f219efbb2b0a830e4",
   "bugs": {
     "url": "https://github.com/brianc/node-postgres/issues"
   },
-  "_id": "pg@6.0.3",
-  "_shasum": "729ce50306ab2579df9d0f614398c1495569a3e2",
+  "_id": "pg@6.1.0",
+  "_shasum": "4ebc58100a79187b6b98fa5caf1675d669926b41",
   "_from": "pg@>=6.0.3 <7.0.0",
   "_npmVersion": "3.9.3",
   "_nodeVersion": "6.2.1",
@@ -33227,16 +33239,15 @@ module.exports={
     }
   ],
   "dist": {
-    "shasum": "729ce50306ab2579df9d0f614398c1495569a3e2",
-    "tarball": "https://registry.npmjs.org/pg/-/pg-6.0.3.tgz"
+    "shasum": "4ebc58100a79187b6b98fa5caf1675d669926b41",
+    "tarball": "https://registry.npmjs.org/pg/-/pg-6.1.0.tgz"
   },
   "_npmOperationalInternal": {
-    "host": "packages-12-west.internal.npmjs.com",
-    "tmp": "tmp/pg-6.0.3.tgz_1468941538018_0.6768157705664635"
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/pg-6.1.0.tgz_1470928707731_0.8180370621848851"
   },
   "directories": {},
-  "_resolved": "https://registry.npmjs.org/pg/-/pg-6.0.3.tgz",
-  "readme": "ERROR: No README data found!"
+  "_resolved": "https://registry.npmjs.org/pg/-/pg-6.1.0.tgz"
 }
 
 },{}],177:[function(require,module,exports){
@@ -33292,7 +33303,7 @@ app.get("/", function (req, res) {
   res.render("index.html");
 });
 
-app.get("/stories", function (req, res) {
+app.get("/koans", function (req, res) {
   var query = client.query("SELECT * FROM koan");
   var returnData = [];
   query.on("row", function (row) {

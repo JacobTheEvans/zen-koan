@@ -2,11 +2,10 @@ import React from "react";
 import Navbar from "./navbar.jsx";
 import About from "./about.jsx";
 import Footer from "./footer.jsx";
-import Story from "./story.jsx";
 
 var navItems = [
-  {"name": "About", "link": "/#/"},
-  {"name": "Stories", "link": "/#/story"}
+  {"name": "About", "link": "/"},
+  {"name": "Koans", "link": "/koans"}
 ]
 
 class Wrapper extends React.Component {

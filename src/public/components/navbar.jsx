@@ -1,9 +1,9 @@
 import React from "react";
 import FontAwesome from "react-fontawesome";
+import {Link} from "react-router";
 
 class Navbar extends React.Component {
   toggle() {
-    console.log("Show")
     document.getElementById("dropDown").classList.toggle("show");
     window.onclick = function(event) {
       if (!event.target.matches(".dropbtn")) {
@@ -20,12 +20,12 @@ class Navbar extends React.Component {
   render() {
     let navLinks = this.props.navItems.map(function(item) {
       return (
-      <li key={item.name} className="nav-item"><a className="nav-link" href={item.link}>{item.name}</a></li>
+      <li key={item.name} className="nav-item"><Link className="nav-link" to={item.link}>{item.name}</Link></li>
       )
     });
     let navMLinks = this.props.navItems.map(function(item) {
       return (
-        <a key={item.name + "m"} href={item.link}>{item.name}</a>
+        <Link key={item.name + "m"} to={item.link}>{item.name}</Link>
       )
     });
     return (

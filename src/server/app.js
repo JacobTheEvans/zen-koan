@@ -28,7 +28,7 @@ app.get("/", function(req, res) {
   res.render("index.html");
 });
 
-app.get("/stories", function(req, res) {
+app.get("/koans", function(req, res) {
   var query = client.query("SELECT * FROM koan");
   var returnData = [];
   query.on("row", function(row) {

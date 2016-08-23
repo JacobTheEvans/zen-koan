@@ -90,6 +90,13 @@ body {
   margin-bottom: 80px;
 }
 
+.koans-section {
+  margin-top: 110px;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .not-found-section {
   margin-top: 110px;
   width: 80%;
@@ -211,6 +218,32 @@ body {
 
 .dropdown-content a:hover {background-color: #f1f1f1}
 .show {display:block;}
+
+.story-link {
+  display: inline-block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  text-align: center;
+}
+
+.story-link-a {
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
+  text-decoration: none;
+  color: #0d8ba1;
+}
+
+.story-link-a:hover {
+  color: #AAD6DE;
+}
+
+.story-text {
+  font-size: 18px;
+  font-family: 'Ubuntu', sans-serif;
+}
 
 @media (max-width: 675px) {
   .l-only {
