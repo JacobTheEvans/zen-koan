@@ -242,7 +242,7 @@ body {
   font-family: 'Ubuntu', sans-serif;
 }
 
-@media (max-width: 675px) {
+@media screen and (max-width: 675px) {
   .l-only {
     display: none;
   }
@@ -252,7 +252,7 @@ body {
   }
 }
 
-@media (min-width: 676px) {
+@media screen and ( min-width: 676px) {
   .m-only {
     display: none;
   }
