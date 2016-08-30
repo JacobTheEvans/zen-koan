@@ -6,7 +6,7 @@ import {Link} from "react-router";
 class BackButton extends React.Component {
   render() {
     return (
-      <Link to="#/" className="button back-button"><FontAwesome name="reply" /></Link>
+      <Link to="/koans" className="button back-button"><FontAwesome name="reply" /></Link>
     )
   }
 }

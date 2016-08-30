@@ -27699,7 +27699,7 @@ var BackButton = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         _reactRouter.Link,
-        { to: "#/", className: "button back-button" },
+        { to: "/koans", className: "button back-button" },
         _react2.default.createElement(_reactFontawesome2.default, { name: "reply" })
       );
     }
