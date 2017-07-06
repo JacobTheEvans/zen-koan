@@ -1,6 +1,6 @@
 # Zen Koan Website
 <p>A website dedicated to Zen Koan (story, dialogue, question, or statement).</p>
-<p>Scraper is located in the /scraper dir and has python code that was to scrape the stories.</p>
+<p>Scraper is located in the /scraper dir and has python code that was used to scrape the stories.</p>
 <p>The ES6/JSX source code is located in /src to build use the commands below:</p>
 <p>npm run-script build-front<p>
 <p>npm run-script build-back</p>
